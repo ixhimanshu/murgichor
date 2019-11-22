@@ -2,43 +2,12 @@
 <div class="my-wrapper">
 
 
-
-<table class="table table-bordered ">
-    <thead>
-      <tr>
-        <th scope="col">Stock Name</th>
-      
-      </tr>
-    </thead>
-    <tbody>
-
-        <tr *ngFor="let t of samplePayload">
-          <th>
-            {{t}}
-          </th>
-        </tr>
-
-    </tbody>
-  </table>
-
-
-  <table class="table table-bordered ">
-      <thead>
-        <tr>
-          <th scope="col">Win Rate</th>
-        
-        </tr>
-      </thead>
-      <tbody>
-  
-          <tr *ngFor="let t of winRate">
-            <th>
-              {{t}}
-            </th>
-          </tr>
-  
-      </tbody>
-    </table>
+  <div class="form-group">
+      <input class="form-control" type="text" placeholder="name">
+  </div>
+  <div class="form-group">
+      <button class="btn btn-primary" (click)="sendValue()">Submit</button>
+  </div>
 
 
   </div>
