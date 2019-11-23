@@ -1,0 +1,33 @@
+.suggestions{
+    width: 400px;
+    position: fixed;
+    top: 50px;
+    right: 0px;
+
+
+ul{
+    li{
+        display: flex;
+        padding: 5px;
+        align-items: center;
+        justify-content: flex-start;
+       
+        &:hover{
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        .firstItem{
+            cursor: pointer;
+            border-right: 1px solid;
+            padding-right: 1rem;
+            margin-right: 1rem;
+        }
+    }
+}
+  
+}
+
+.custonInput{
+    width: 278px;
+}
+

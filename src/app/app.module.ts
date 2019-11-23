@@ -14,6 +14,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './dashboard/navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { ArenaComponent } from './dashboard/arena/arena.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     DashboardComponent,
     LoginComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    ArenaComponent
   ],
   imports: [
     BrowserModule,

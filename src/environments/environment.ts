@@ -10,5 +10,9 @@ export const environment = {
     measurementId: "G-J5CPDKHKKW"
   },
   production: false,
+
+  AlphaApiKey: 'DIAJRNJ23K0GMM32',
+  AlphaApiKey2: 'F75NB4Z66DVA86D5',
+
 };
 

@@ -34,11 +34,27 @@ export class MyFirebaseService {
     
   }
 
-  sendMessage(){
-    return this.db.collection("Rooms")
+  sendMessage(name, symbol, cat, week, month,quater, half_year, year ){
+    return this.db.collection("Stocks")
     .add({
-      read_status: false
+      name: name,
+      symbol: symbol,
+      category: cat,
+      week: week,
+      month: month,
+      quater: quater,
+      half_year: half_year,
+      year: year
     });
+  }
+
+  getStockData(){
+    const msgRef = this.db
+    .collection("Stocks")
+
+  // var ref = firebase.database().ref("Rooms");
+  // console.log('msg from fire service', roomRef)
+  return msgRef.valueChanges();
   }
 
   sendMsg(
