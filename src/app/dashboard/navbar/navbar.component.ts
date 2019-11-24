@@ -19,6 +19,10 @@ export class NavbarComponent implements OnInit {
     // this.onAutoSuggest();
   }
 
+  onManualSelection(auto_suggest){
+    this._state.sendMessage(auto_suggest, auto_suggest );
+  }
+
   onSelectStock(symbol,name){
     console.log(symbol);
     let r = symbol.substring(symbol.length, symbol.length-3);

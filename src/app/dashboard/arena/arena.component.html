@@ -1,15 +1,33 @@
-<table class="table">
+
+
+<div class="watchlist-wrapper mb-4 mt-4" >
+  <button class="btn btn-info ml-4">Watchlist 1</button>
+  <button class="btn btn-info ml-4">Watchlist 2</button>
+
+  <form class="form-inline my-2 my-lg-0 ml-4">
+    <input [(ngModel)] = "add_watchlist"  class="custonInput form-control mr-sm-2" type="search" placeholder="Add" aria-label="Add" [ngModelOptions]="{standalone: true}">
+    <button (click)="onAddWatchlist($event)" class="btn btn-outline-success my-2 my-sm-0" type="submit">Add Watchlist</button>
+  </form>
+</div>
+
+
+
+<table class="table m-4">
     <thead class="thead-dark">
       <tr>
         <th scope="col">#</th>
         <th scope="col">Name</th>
         <th scope="col">Symbol</th>
+        <th scope="col">Price</th>
+
         <!-- <th scope="col">Category</th> -->
         <th scope="col">Week</th>
         <th scope="col">Month</th>
         <th scope="col">3 months</th>
         <th scope="col">6 months</th>
         <th scope="col">Year</th>
+        <th scope="col"></th>
+
 
 
 
@@ -20,12 +38,14 @@
         <th> {{i+1}} </th>
         <td> {{d.name}} </td>
         <td> {{d.symbol}} </td>
-        <!-- <td>  </td> -->
+        <td> {{d.price}}  </td>
         <td> {{d.week}} </td>
         <td> {{d.month}} </td>
         <td> {{d.quater}} </td>
         <td> {{d.half_year}} </td>
         <td> {{d.year}} </td>
+        <td> <button class="btn btn-danger" (click)="onDelete(d.stockID)" >Delete</button> </td>
+
 
       </tr>
     

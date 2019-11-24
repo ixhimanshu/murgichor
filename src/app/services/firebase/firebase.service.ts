@@ -34,7 +34,7 @@ export class MyFirebaseService {
     
   }
 
-  sendMessage(name, symbol, cat, week, month,quater, half_year, year ){
+  sendMessage(name, symbol, cat, week, month,quater, half_year, year, watchlist ){
     return this.db.collection("Stocks")
     .add({
       name: name,
@@ -44,7 +44,9 @@ export class MyFirebaseService {
       month: month,
       quater: quater,
       half_year: half_year,
-      year: year
+      year: year,
+      watchlist: watchlist
+      // price: price
     });
   }
 
@@ -57,28 +59,42 @@ export class MyFirebaseService {
   return msgRef.valueChanges();
   }
 
-  sendMsg(
-    roomID,
-    msg,
-    file = "",
-    customerName,
-    agentName,
-    id,
-    fileType,
-    customerID,
-    agentID,
-    msgType,
-    fileName
-  ) {
-    let dateInit = new Date().getTime();
-    return this.db
-      .collection("Rooms")
-      .doc(roomID)
-      .collection("Message")
-      .add({
-        read_status: false
-      });
+
+
+  deleteStock(id){
+      return this.db
+        .collection("Stocks")
+        .doc(id)
+        .delete();
   }
+
+
+  patchStcokId(stockID) {
+    console.log('reassign log', stockID);
+   return this.db
+      .collection("Stocks")
+      .doc(stockID)
+      .update({
+        'stockID': stockID
+      })
+  }
+
+
+  // old data
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   updateUnreadCount(roomId, count) {
     this.db
@@ -122,15 +138,6 @@ export class MyFirebaseService {
       });
 
     this.counter = 0;
-  }
-
-  resetChatRoomCount(roomId) {
-    this.db
-      .collection("Rooms")
-      .doc(roomId)
-      .update({
-        UnreadCount: 0
-      });
   }
 
   patchChatRoomAgent(roomId, agentName, agentId) {
