@@ -15,6 +15,14 @@ import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './dashboard/navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ArenaComponent } from './dashboard/arena/arena.component';
+import { PlayerComponent } from './dashboard/player/player.component';
+
+
+// import { YoutubePlayerModule } from 'ngx-youtube-player';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
+import { AdminComponent } from './dashboard/admin/admin.component';
+
 
 
 @NgModule({
@@ -24,7 +32,9 @@ import { ArenaComponent } from './dashboard/arena/arena.component';
     LoginComponent,
     NavbarComponent,
     SidebarComponent,
-    ArenaComponent
+    ArenaComponent,
+    PlayerComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +46,9 @@ import { ArenaComponent } from './dashboard/arena/arena.component';
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    NgxYoutubePlayerModule.forRoot()
+    // YoutubePlayerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,37 @@
+
+
+<!-- <div class="container p-4">
+  <youtube-player
+  [videoId]="id"
+  (ready)="savePlayer($event)"
+  (change)="onStateChange($event)"
+></youtube-player>
+
+<button class="btn btn-primary mt-4" (click)="playVideo()">Play</button>
+<button class="btn btn-primary mt-4" (click)="stopVideo()">stopVideo</button>
+</div> -->
+
+
+
+<div class="player">
+	<div id="info" class="info" [ngStyle]="{ 'background-image': 'url(' + defaultImg + ')'}">
+	  <div class="details">
+      <span class="artist">Flume</span>
+      <span class="name">Say it</span>
+      <div class="progress-bar">
+        <div class="bar"></div>
+      </div>
+    </div>	
+	</div>
+	<div id="control-panel" class="control-panel">
+	
+		<div class="controls">
+			<div class="prev"></div>
+			<div id="play" class="play"></div>
+			<div class="next"></div>
+		</div>
+	</div>
+</div>
+
+
+
